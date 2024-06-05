@@ -97,7 +97,7 @@ const Testimonial = () => {
           onClick={prevSlide}
           className="px-2 py-2 text-black border border-gray-500 rounded-full "
         >
-          <IoIosArrowRoundForward
+          <IoIosArrowRoundBack
             style={{ color: "gray-500", fontSize: "20px" }}
           />
         </button>
@@ -105,7 +105,9 @@ const Testimonial = () => {
           onClick={nextSlide}
           className="px-2  text-black border border-[#cc5500] rounded-full  py-2 "
         >
-          <IoIosArrowRoundBack style={{ color: "#cc5500", fontSize: "20px" }} />
+          <IoIosArrowRoundForward
+            style={{ color: "#cc5500", fontSize: "20px" }}
+          />
         </button>
       </div>
       <div className=" absolute bottom-[-10%] right-[40%]z-50 flex items-center justify-center mt-4 w-fit h-10">
