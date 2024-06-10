@@ -35,15 +35,17 @@ const Header = () => {
     <div className="relative">
       {/* Background Image */}
       <div
-        className=" sm:block absolute inset-0 bg-no-repeat bg-cover bg-center"
+        className="absolute inset-0 bg-center bg-no-repeat bg-cover sm:block"
         style={{
           backgroundImage: `url(${slides[currentIndex].img})`,
+          transition: "ease-in",
+          transitionDuration: ".7s",
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
       {/* Content */}
-      <div className="relative flex  items-center gap-24  justify-center  px-8 py-16 md:py-0 md:min-h-screen ">
+      <div className="relative flex items-center justify-center gap-24 px-8 py-16 md:py-0 md:min-h-screen ">
         <div
           className=" border border-[#cc5500] rounded-full px-1 py-1"
           onClick={prevSlide}
@@ -51,9 +53,9 @@ const Header = () => {
           <IoIosArrowRoundBack size={30} color="#cc5500" />
         </div>
         <div className="max-w-[45rem] text-center flex flex-col items-center pt-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-center text-white ">
+          <h1 className="text-3xl font-bold text-center text-white md:text-4xl ">
             We provide top-notch
-            <span className=" block">cleaning and plumbing services</span>
+            <span className="block ">cleaning and plumbing services</span>
           </h1>
           <p className="mt-8 max-w-[40rem] text-center   text-white font-normal leading-relaxed md:leading-relaxed text-base">
             Kip-clean Cleaning and plumbing is your one-stop shop for all your
@@ -63,7 +65,7 @@ const Header = () => {
           <button className="mt-8 bg-[#CC5500] text-white font-medium px-8 py-3 rounded-3xl">
             Request a service
           </button>
-          <div className="  flex items-center justify-center  w-fit h-10 mt-24">
+          <div className="flex items-center justify-center h-10 mt-24 w-fit">
             {slides.map((slide, index) => (
               <div
                 key={index}

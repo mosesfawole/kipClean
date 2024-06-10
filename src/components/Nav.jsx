@@ -31,7 +31,7 @@ const Nav = () => {
               onMouseEnter={() => setActive(navList.name)}
             >
               <Link to={navList.path}>
-                <div className=" flex items-center gap-8 relative">
+                <div className="relative flex items-center gap-8 ">
                   <span
                     className={
                       active === navList.name
