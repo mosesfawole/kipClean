@@ -18,14 +18,18 @@ const AboutHeader = () => {
         className="relative w-full h-screen px-8 text-white bg-center bg-no-repeat bg-cover "
         style={{
           background: "url(/aboutbanner.png)",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
         }}
       >
         {/* overlay */}
-        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="absolute inset-0 bg-black opacity-5"></div>
         {/*  */}
         <div className="flex items-center justify-center h-full ">
           <div className="flex flex-col items-center gap-8 ">
-            <h1 className="text-2xl ">Excellence is our standard</h1>
+            <h1 className="text-2xl font-bold text-white ">
+              Excellence is our standard
+            </h1>
             <p className=" max-w-[35rem]">
               Your go-to hub for all cleaning and plumbing needs.we're dedicated
               to keeping your home and business clean, safe, and running

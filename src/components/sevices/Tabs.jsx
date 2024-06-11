@@ -15,11 +15,8 @@ const Tabs = () => {
   };
 
   const handleServiceClick = (product) => {
-    setSelectedService((prevState) => {
-      const newState = { ...prevState, ...product };
-      console.log("Updated selectedService:", newState);
-      return newState;
-    });
+    setSelectedService(product);
+    console.log("Updated selectedService:", product);
   };
 
   const handleArrowClick = () => {
@@ -30,8 +27,6 @@ const Tabs = () => {
       });
       return newIndex;
     });
-    setSelectedLocation(null); // Reset selected location on data switch (optional)
-    setSelectedService(null); // Reset selected service on data switch
   };
 
   const toggleSummaryVisibility = () => {
@@ -45,8 +40,8 @@ const Tabs = () => {
       <h1 className="text-4xl font-bold text-center uppercase">
         Book a service
       </h1>
-      <div className="flex items-center justify-center border border-transparent w-fit rounded-xl">
-        <div className="p-8 md:p-16 rounded-xl w-full flex h-[43rem]">
+      <div className="flex items-center justify-center border border-transparent w-fit rounded-xl relative">
+        <div className="p-8 md:p-16 rounded-xl w-full flex h-[43rem] relative">
           <div className="hidden md:flex bg-orange p-8 basis-[20%] items-center flex-col text-center gap-4 text-white">
             <div className="flex gap-8 pt-4">
               {data.map((_, index) => (
@@ -76,6 +71,14 @@ const Tabs = () => {
             {currentData.name === "Location" && (
               <>
                 <h1>Select a location</h1>
+                <div className="absolute top-0 right-[5%] md:hidden">
+                  <button
+                    onClick={toggleSummaryVisibility}
+                    className="p-2 text-white rounded-lg "
+                  >
+                    <FaBars color="black" />
+                  </button>
+                </div>
                 <hr />
                 <div className="mt-8 flex flex-col gap-4 w-[100%] basis-[60%]">
                   {currentData.products.map((product, index) => (
@@ -126,17 +129,17 @@ const Tabs = () => {
               <div className={`${currentDataIndex > 0 ? "block" : "hidden"}`}>
                 <FaArrowLeft onClick={handleArrowClick} />
               </div>
-              <div onClick={handleArrowClick}>Proceed</div>
+              <div onClick={() => handleArrowClick()}>Proceed</div>
             </div>
           </div>
           <div
-            className={`bg-orange p-4 transition-transform duration-300 md:block md:relative md:ml-8 ${
+            className={`bg-orange p-4 transition-transform duration-300 md:block md:relative md:ml-8 absolute top-20 left-[2.2rem] w-[80%] md:w-[40%] h-full ${
               isSummaryVisible ? "block" : "hidden"
-            }`}
+            } md:w-auto md:h-auto md:top-auto md:left-auto`}
           >
             <h1>Summary</h1>
             {selectedLocation && <h2>LOCATION: {selectedLocation.name}</h2>}
-            {selectedService && <h2>SERVICES: {selectedService.name}</h2>}
+            {selectedService && <h2>SERVICE: {selectedService.name}</h2>}
           </div>
         </div>
       </div>
