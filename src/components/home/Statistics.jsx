@@ -11,13 +11,13 @@ const Statistics = () => {
   const [ref, inView] = useInView({ threshold: 0.1 });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="flex flex-col items-center w-full  ">
       <h1 className="text-2xl font-bold text-center">Our Statistics</h1>
       <p className="text-center">
         Don't take our words for it, view our numbers below
       </p>
-      <div className="flex justify-center sm:justify-normal">
-        <div className="grid w-full grid-cols-1 gap-4 p-12 mt-8 bg-secondary sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="px-0 bg-secondary">
+        <div className="grid w-full grid-cols-1 gap-4 p-12 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <NumberCard
               key={index}
@@ -38,12 +38,14 @@ const NumberCard = ({ rating, text, inView }) => {
   const suffix = rating.replace(/[0-9]/g, ""); // Extract non-numeric part
 
   return (
-    <div className="border border-orange w-[10rem] aspect-[1/1] px-4 py-4 text-center rounded-lg flex flex-col items-center justify-center">
-      <h2>
+    <div className="flex flex-col items-center px-2 py-8 text-center border border-orange rounded-2xl ">
+      <h2 className="text-2xl font-bold ">
         {count}
         {suffix}
       </h2>
-      <p className="font-medium text-whiteText">{text}</p>
+      <p className="text-sm font-medium text-center max-w-[10rem] text-whiteText">
+        {text}
+      </p>
     </div>
   );
 };

@@ -43,7 +43,7 @@ const Nav = () => {
                   </span>
                   <div
                     className=" absolute right-[-40%]"
-                    onMouseEnter={() => setDropDown((prevMode) => !prevMode)}
+                    onClick={() => setDropDown((prevMode) => !prevMode)}
                   >
                     {navList.arrow ? navList.arrow : null}
                   </div>
@@ -57,7 +57,7 @@ const Nav = () => {
           ))}
           {/*  */}
           {dropDown && (
-            <div className=" absolute right-[42%] top-16 p-4 bg-black text-gray-500">
+            <div className=" absolute right-[42%] z-50 top-16 p-4 bg-black text-gray-500">
               <Link to="/pricing">
                 <h1>Pricing</h1>
               </Link>
@@ -71,11 +71,12 @@ const Nav = () => {
       <button className="bg-[#CC5500] text-white rounded-3xl text-sm font-normal px-4 py-2">
         Get a Quote
       </button>
-      <div className="md:hidden">
+      <div className="relative z-50 md:hidden">
         {menuOpen ? (
           <IoClose
+            color="white"
             size={30}
-            className="cursor-pointer"
+            className="absolute text-white bg-white cursor-pointer "
             onClick={() => setMenuOpen(false)}
           />
         ) : (
@@ -88,8 +89,15 @@ const Nav = () => {
       </div>
       {/* Hamburger menu */}
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full z-50 bg-[#007fff] shadow-lg">
-          <ul className="flex flex-col gap-2 px-4 py-4">
+        <div className="absolute top-0 left-0 z-50 w-full h-[400px] shadow-lg bg-ash">
+          <div className="absolute border border-white rounded-full cursor-pointer top-8 right-8">
+            <IoClose
+              color="white"
+              size={25}
+              onClick={() => setMenuOpen(false)}
+            />
+          </div>
+          <ul className="flex flex-col gap-8 px-4 py-16 text-center">
             {navLists.map((navList, index) => (
               <>
                 <li
@@ -100,9 +108,9 @@ const Nav = () => {
                     setMenuOpen(false);
                   }}
                 >
-                  {navList.name}
+                  <Link to={navList.path}>{navList.name}</Link>
                 </li>
-                <span className=" bg-white w-full h-[1px]"></span>
+                {/* <span className=" bg-white w-full h-[1px]"></span> */}
                 {/* <hr className="text-white bg-white " /> */}
               </>
             ))}

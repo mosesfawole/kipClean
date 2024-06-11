@@ -38,8 +38,9 @@ const Header = () => {
         className="absolute inset-0 bg-center bg-no-repeat bg-cover sm:block"
         style={{
           backgroundImage: `url(${slides[currentIndex].img})`,
-          transition: "ease-in",
-          transitionDuration: ".7s",
+          backgroundRepeat: "no-repeat",
+          // transition: "ease-in",
+          // transitionDuration: ".7s",
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -47,7 +48,7 @@ const Header = () => {
       {/* Content */}
       <div className="relative flex items-center justify-center gap-24 px-8 py-16 md:py-0 md:min-h-screen ">
         <div
-          className=" border border-[#cc5500] rounded-full px-1 py-1"
+          className="hidden md:block border border-[#cc5500] rounded-full px-1 py-1"
           onClick={prevSlide}
         >
           <IoIosArrowRoundBack size={30} color="#cc5500" />
@@ -78,7 +79,7 @@ const Header = () => {
           </div>
         </div>
         <div
-          className=" border border-[#cc5500] rounded-full px-1 py-1"
+          className=" hidden md:block border border-[#cc5500] rounded-full px-1 py-1"
           onClick={nextSlide}
         >
           <IoIosArrowRoundForward size={30} color="#cc5500" />

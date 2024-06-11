@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Faqs from "../Faqs";
 
 const Faq = () => {
   const questions = [
@@ -45,10 +46,10 @@ const Faq = () => {
   };
 
   return (
-    <div className=" flex flex-col md:flex-row mt-8 px-8 gap-16 py-8 items-start ">
+    <div className="flex flex-col items-start gap-16 px-8 py-8 mt-8 md:flex-row">
       <div className=" w-full md:w-[60%]">
-        <h1 className="text-orange text-2xl font-bold">Kip-Clean</h1>
-        <p className=" pt-8 text-base text-left md:pt-12">
+        <h1 className="text-2xl font-bold text-orange">Kip-Clean</h1>
+        <p className="pt-8 text-base text-left md:pt-12">
           We pride ourselves on our professionalism and reliability. Our team of
           trained cleaning professionals is dedicated to delivering consistently
           high-quality results with every visit. You can trust us to show up on
@@ -60,10 +61,10 @@ const Faq = () => {
       </div>
       {/*  */}
       <div className=" w-full md:w-[50%] ">
-        <h1 className="text-orange text-2xl font-bold">
+        <h1 className="text-2xl font-bold text-orange">
           Frequently Asked Questions
         </h1>
-        <div className=" mt-12 text-md font-bold">
+        {/* <div className="mt-12 font-bold text-md">
           {questions.map((question, index) => (
             <div key={index}>
               <div className="flex gap-12">
@@ -87,10 +88,11 @@ const Faq = () => {
                   />
                 </div>
               </div>
-              <hr className=" my-4" />
+              <hr className="my-4 " />
             </div>
           ))}
-        </div>
+        </div> */}
+        <Faqs />
       </div>
     </div>
   );

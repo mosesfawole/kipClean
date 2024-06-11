@@ -71,7 +71,7 @@ const Testimonial = () => {
         >
           {testimonials.map((testimony, index) => (
             <div
-              className="flex-shrink-0 w-full  flex  flex-col md:flex-row items-center rounded-xl overflow-hidden gap-12 bg-[#494949] p-12"
+              className="flex-shrink-0 w-full  flex  flex-col md:flex-row items-left md:items-center rounded-xl overflow-hidden gap-4 md:gap-12 bg-[#494949] p-4 md:p-12"
               key={index}
             >
               <div className="w-[40%] ">
@@ -84,7 +84,9 @@ const Testimonial = () => {
                 </div>
               </div>
               <div className="w-full text-left text-white">
-                <h1 className="text-lg font-semibold">{testimony.message}</h1>
+                <h1 className="text-base font-semibold md:text-lg">
+                  {testimony.message}
+                </h1>
                 <p className="pb-1 mt-2 font-extrabold">{testimony.name}</p>
                 <p className="text-white ">{testimony.username}</p>
               </div>

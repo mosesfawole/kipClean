@@ -71,13 +71,13 @@ const Faqs = () => {
                 >
                   {showAns[index] ? (
                     <AiOutlineMinus
-                      size={20}
-                      className=" bg-gray-500 rounded-full p-1"
+                      size={25}
+                      className="p-1 rounded-full bg-orange"
                     />
                   ) : (
                     <AiOutlinePlus
-                      size={20}
-                      className=" bg-gray-500 rounded-full p-1"
+                      size={25}
+                      className="p-1 rounded-full bg-orange "
                     />
                   )}
                 </div>
