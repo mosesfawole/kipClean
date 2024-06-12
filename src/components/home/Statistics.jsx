@@ -18,7 +18,6 @@ const Statistics = () => {
       </p>
       <div className="w-full bg-secondary">
         {" "}
-        {/* Ensure this div takes full width */}
         <div className="grid w-full grid-cols-1 gap-4 p-12 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <NumberCard

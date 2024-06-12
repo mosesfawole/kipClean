@@ -11,7 +11,7 @@ const Nav = () => {
   const navLists = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Services", path: "/services", arrow: <IoIosArrowDown /> },
+    { name: "Services", path: "", arrow: <IoIosArrowDown /> },
     { name: "Contact Us", path: "/contact" },
   ];
 

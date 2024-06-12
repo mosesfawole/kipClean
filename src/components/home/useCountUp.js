@@ -4,7 +4,7 @@ const useCountUp = (end, duration, reset) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setCount(0); // Reset count to 0 when reset changes
+    setCount(0);
 
     let start = 0;
     const increment = end / (duration / 10);

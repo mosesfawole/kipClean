@@ -1,13 +1,13 @@
 import { useState } from "react";
-import data from "./data.js"; // Assuming data holds the "services" array
-import { FaArrowLeft, FaBars } from "react-icons/fa"; // Import FaBars for menu icon
+import data from "./data.js";
+import { FaArrowLeft, FaBars } from "react-icons/fa";
 
 const Tabs = () => {
-  const [currentDataIndex, setCurrentDataIndex] = useState(0); // Track current data index
-  const [selectedLocation, setSelectedLocation] = useState(null); // State to store selected location
-  const [selectedService, setSelectedService] = useState(null); // State to store selected service
-  const [activeCircles, setActiveCircles] = useState([true, false]); // State to store active circle indicators
-  const [isSummaryVisible, setIsSummaryVisible] = useState(false); // State to manage summary visibility
+  const [currentDataIndex, setCurrentDataIndex] = useState(0);
+  const [selectedLocation, setSelectedLocation] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
+  const [activeCircles, setActiveCircles] = useState([true, false]);
+  const [isSummaryVisible, setIsSummaryVisible] = useState(false);
 
   const handleLocationClick = (product) => {
     setSelectedLocation(product);
@@ -133,7 +133,7 @@ const Tabs = () => {
             </div>
           </div>
           <div
-            className={`bg-orange p-4 transition-transform duration-300 md:block md:relative md:ml-8 absolute top-20 left-[2.2rem] w-[80%] md:w-[40%] h-full ${
+            className={`bg-orange p-4 transition-transform duration-300 lg:block md:relative md:ml-8 absolute top-20 left-[2.2rem] w-[80%] md:w-[40%] h-[30%] lg:h-full ${
               isSummaryVisible ? "block" : "hidden"
             } md:w-auto md:h-auto md:top-auto md:left-auto`}
           >
