@@ -1,11 +1,11 @@
-import AboutHeader from "../components/about/AboutHeader";
+import AboutHeader from '../components/about/AboutHeader';
 
 const About = () => {
-  return (
-    <div>
-      <AboutHeader />
-    </div>
-  );
+	return (
+		<div>
+			<AboutHeader />
+		</div>
+	);
 };
 
 export default About;
