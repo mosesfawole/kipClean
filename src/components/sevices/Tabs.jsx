@@ -36,13 +36,13 @@ const Tabs = () => {
 	const currentData = data[currentDataIndex];
 
 	return (
-		<div className='w-full flex flex-col items-center px-4 mb-20'>
-			<h1 className='sm:text-2xl md:text-4xl font-bold text-center uppercase'>
+		<div className='flex flex-col items-center'>
+			<h1 className='text-4xl font-bold text-center uppercase'>
 				Book a service
 			</h1>
-			<div className='w-full relative mt-10'>
-				<div className='w-full flex flex-col md:flex-row relative'>
-					<div className='w-[70%] hidden md:flex bg-orange p-8 items-center flex-col text-center gap-4 text-white'>
+			<div className='flex items-center justify-center border border-transparent w-fit rounded-xl relative'>
+				<div className='p-8 md:p-16 rounded-xl w-full flex h-[43rem] relative'>
+					<div className='hidden md:flex bg-orange p-8 basis-[20%] items-center flex-col text-center gap-4 text-white'>
 						<div className='flex gap-8 pt-4'>
 							{data.map((_, index) => (
 								<div
@@ -66,16 +66,23 @@ const Tabs = () => {
 							</p>
 						</div>
 					</div>
-					<div className='w-full bg-secondary p-4 relative'>
+					<div className='bg-secondary p-4 w-[300px] md:basis-[40%] relative'>
 						{currentData.name === 'Location' && (
 							<>
 								<h1>Select a location</h1>
+								<div className='absolute top-0 right-[5%] md:hidden'>
+									<button
+										onClick={toggleSummaryVisibility}
+										className='p-2 text-white rounded-lg '>
+										<FaBars color='black' />
+									</button>
+								</div>
 								<hr />
-								<div className='mt-8 flex flex-col gap-4 w-full'>
+								<div className='mt-8 flex flex-col gap-4 w-[100%] basis-[60%]'>
 									{currentData.products.map((product, index) => (
 										<div
 											key={index}
-											className={`cursor-pointer flex items-center gap-4 border border-gray-400 hover:bg-gray-200 rounded-lg px-2 py-1 w-full ${
+											className={`cursor-pointer flex gap-4 border border-gray-400 rounded-lg px-2 py-1 w-full ${
 												selectedLocation === product ? 'bg-gray-200' : ''
 											}`}
 											onClick={() => handleLocationClick(product)}>
@@ -89,12 +96,19 @@ const Tabs = () => {
 						{currentData.name === 'Service' && (
 							<>
 								<h1>Select a service</h1>
+								<div className='absolute top-0 right-[5%] md:hidden'>
+									<button
+										onClick={toggleSummaryVisibility}
+										className='p-2 text-white rounded-lg '>
+										<FaBars color='black' />
+									</button>
+								</div>
 								<hr />
-								<div className='mt-8 flex flex-col gap-4 w-full'>
+								<div className='mt-8 flex flex-col gap-4 w-[100%] basis-[60%]'>
 									{currentData.products.map((product, index) => (
 										<div
 											key={index}
-											className={`cursor-pointer flex gap-4 border border-gray-400 hover:bg-gray-200 rounded-xl px-2 py-2 w-full items-center ${
+											className={`cursor-pointer flex gap-4 border border-gray-400 rounded-xl px-2 py-2 w-full items-center ${
 												selectedService === product ? 'bg-gray-200' : ''
 											}`}
 											onClick={() => handleServiceClick(product)}>
@@ -105,64 +119,21 @@ const Tabs = () => {
 								</div>
 							</>
 						)}
-						<hr className='mt-[4rem]' />
-						<div className='flex left-0 justify-between items-center absolute bottom-[10px] w-full px-4'>
-							<div
-								className={`${
-									currentDataIndex > 0 ? 'block cursor-pointer' : 'hidden'
-								}`}>
+						<hr className='mt-4' />
+						<div className='flex justify-between items-center cursor-pointer absolute bottom-[10px] w-full px-4'>
+							<div className={`${currentDataIndex > 0 ? 'block' : 'hidden'}`}>
 								<FaArrowLeft onClick={handleArrowClick} />
 							</div>
-							<button
-								onClick={() => handleArrowClick()}
-								className='bg-orange text-white py-1 px-4 rounded-full'>
-								Proceed
-							</button>
+							<div onClick={() => handleArrowClick()}>Proceed</div>
 						</div>
 					</div>
-					<div className='w-full md:w-[70%] min-h-56 bg-orange p-4 text-white'>
-						<h1 className='text-center text-xl'>Summary</h1>
-						<div className='bg-secondary rounded-b-lg mt-7 py-8 px-4 text-black border-b'>
-							<h1 className='text-xl font-semibold'>Flat</h1>
-							<p className='text-orange text-semibold'>30 April, 10:00</p>
-							<p className='text-white text-sm p-1 bg-orange rounded w-[10rem]'>
-								Estate 3Bedroom Flat
-							</p>
-
-							<h2 className='mt-7 text-[#D9D9D9]'>
-								LOCATION__________________
-								{selectedLocation && (
-									<span className='font-semibold text-black'>
-										{selectedLocation.name}
-									</span>
-								)}
-							</h2>
-							<h2 className='mt-7 text-[#D9D9D9] border-b-2 pb-7'>
-								SERVICE__________________
-								{selectedService && (
-									<span className='font-semibold text-black'>
-										{selectedService.name}
-									</span>
-								)}
-							</h2>
-
-							<div className='text-black mt-7'>
-								<h1 className=' font-semibold border-b'>COST BREAKDOWN</h1>
-
-								<div className='border-b'>
-									<p className='flex justify-between items-center w-full mt-4'>
-										Flat <span className='font-semibold'>N0.00</span>
-									</p>
-									<p className='flex justify-between items-center w-full mt-4'>
-										3 Bedroom Flat <span className='font-semibold'>N0.00</span>
-									</p>
-								</div>
-
-								<p className='flex justify-between text-lg items-center w-full mt-2'>
-									Total Price <span className='font-semibold'>N0.00</span>
-								</p>
-							</div>
-						</div>
+					<div
+						className={`bg-orange p-4 transition-transform duration-300 lg:block md:relative md:ml-8 absolute top-20 left-[2.2rem] w-[80%] md:w-[40%] h-[30%] lg:h-full ${
+							isSummaryVisible ? 'block' : 'hidden'
+						} md:w-auto md:h-auto md:top-auto md:left-auto`}>
+						<h1>Summary</h1>
+						{selectedLocation && <h2>LOCATION: {selectedLocation.name}</h2>}
+						{selectedService && <h2>SERVICE: {selectedService.name}</h2>}
 					</div>
 				</div>
 			</div>
