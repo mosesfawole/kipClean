@@ -12,7 +12,7 @@ const Footer = () => {
         <h1 className="flex-1 mb-10 md:mb-0  text-3xl font-bold w-full md:px-10 ">
           Kip-Clean
         </h1>
-        <div className="grid grid-cols-2 sm:grid md:flex lg;grid  gap-16 justify-between ">
+        <div className="grid grid-cols-2 sm:grid md:flex lg;grid md:mr-20  gap-16 justify-between ">
           <div className="order-2 md:order-1 w-full">
             <h1 className="text-xl font-bold ">Support</h1>
             <ul className="flex flex-col gap-4 pt-4 ">
