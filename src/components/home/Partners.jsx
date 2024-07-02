@@ -18,7 +18,7 @@ const Partners = () => {
         </h1>
       </div>
       <div className="">
-        <div className="xs:logos-slide sm:logos-slide  md:flex md:flex-wrap justify-center items-center gap-12">
+        <div className="xs:logos-slide sm:logos-slide md:mx-40 md:flex md:flex-wrap justify-evenly items-center gap-12">
           {images.map((src, index) => (
             <img key={index} src={src} alt="" className="w-fit" />
           ))}
