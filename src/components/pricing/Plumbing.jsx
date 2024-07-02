@@ -41,7 +41,9 @@ const Plumbing = () => {
 
   return (
     <div className="mt-4 transition-all duration-500 ">
-      <h3 className="py-4 text-lg font-semibold ">Plumbing services</h3>
+      <h3 className="mb-4 text-center text-lg font-semibold ">
+        Plumbing services
+      </h3>
       <div className="p-8 rounded-lg bg-secondary text-[#848484] flex flex-col gap-4">
         <div>
           <p className="font-semibold ">Type of service</p>

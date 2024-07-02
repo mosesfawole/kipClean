@@ -48,7 +48,7 @@ const Residential = () => {
 
   return (
     <div className="mt-4 transition-all duration-500 ">
-      <h3 className="py-4 text-lg font-semibold">
+      <h3 className="mb-4 text-center text-lg font-semibold">
         Residential cleaning services
       </h3>
       <div className="flex flex-col gap-4 p-8 rounded-lg bg-secondary text-[#848484] ">
