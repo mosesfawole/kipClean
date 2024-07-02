@@ -1,30 +1,31 @@
 const Partners = () => {
-	const images = [
-		'/unilever.png',
-		'/cussons.png',
-		'/clorox.png',
-		'/waw.png',
-		'/sunlight.png',
-		'/givanas.png',
-		'/nittol.png',
-		'/mamuda.png',
-	];
-	const duplicatedImages = [...images, ...images];
+  const images = [
+    "/unilever.png",
+    "/cussons.png",
+    "/clorox.png",
+    "/waw.png",
+    "/sunlight.png",
+    "/givanas.png",
+    "/nittol.png",
+    "/mamuda.png",
+  ];
 
-	return (
-		<div className='logo whitespace-nowrap mt-20 md:mt-[10rem] bg-[#fff4ec]'>
-			<h1 className='text-black text-4xl font-medium text-center px-4 py-4'>
-				Our Partners
-			</h1>
-			<div className='overflow-hidden px-24 py-12 pt-4'>
-				<div className='logos-slide'>
-					{duplicatedImages.map((src, index) => (
-						<img key={index} src={src} alt='' className='w-[7rem]' />
-					))}
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div className="flex flex-col gap-20 pb-20 mt-10 md:mt-40  bg-[#595F66] sm:bg-[#595F66] md:bg-[#fff4ec] ">
+      <div className="mt-4 ">
+        <h1 className="text-white md:text-black text-4xl  font-bold text-center ">
+          Our Partners
+        </h1>
+      </div>
+      <div className="">
+        <div className="xs:logos-slide sm:logos-slide  md:flex md:flex-wrap justify-center items-center gap-12">
+          {images.map((src, index) => (
+            <img key={index} src={src} alt="" className="w-fit" />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Partners;
