@@ -8,11 +8,13 @@ const Footer = () => {
 
   return (
     <div className=" bg-[#2f2f2f] text-white p-8 max-w-[1440px] mx-auto">
-      <div className="md:flex  items-baseline">
-        <h1 className="flex-1 mb-10 md:mb-0  text-3xl font-bold w-full md:px-10 ">
-          Kip-Clean
-        </h1>
-        <div className="grid grid-cols-2 sm:grid md:flex lg;grid md:mr-20  gap-16 justify-between ">
+      <div className="md:flex gap-4  items-baseline">
+        <div className=" ">
+          <h1 className=" mb-10 md:mb-0  text-3xl font-bold w-full sm:mr-8 md:mr-10  ">
+            Kip-Clean
+          </h1>
+        </div>
+        <div className="grid  grid-cols-2 sm:grid md:flex lg;grid md:mr-20  gap-16 justify-between ">
           <div className="order-2 md:order-1 w-full">
             <h1 className="text-xl font-bold ">Support</h1>
             <ul className="flex flex-col gap-4 pt-4 ">
