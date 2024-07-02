@@ -11,7 +11,7 @@ const Partners = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-20 pb-20 mt-10 md:mt-40  bg-[#595F66] sm:bg-[#595F66] md:bg-[#fff4ec] ">
+    <div className="overflow-x-hidden flex flex-col gap-10 md:gap-20 pb-16 mt-10 md:mt-40  bg-[#595F66] sm:bg-[#595F66] md:bg-[#fff4ec] ">
       <div className="mt-4 ">
         <h1 className="text-white md:text-black text-4xl  font-bold text-center ">
           Our Partners
@@ -20,7 +20,7 @@ const Partners = () => {
       <div className="">
         <div
           className={
-            "logos-slide  md:mx-40  md:grid md:w-fit md:animate-none md:grid-cols-4  items-center md:gap-12"
+            "logos-slide w-fit  md:mx-40  md:grid md:w-fit md:animate-none md:grid-cols-4  items-center md:gap-12"
           }
         >
           {images.map((src, index) => (

@@ -57,7 +57,7 @@ const CleaningServices = () => {
           and insured, so you can have peace of mind.
         </p>
       </div>
-      <div className="grid grid-cols-1 gap-12 mx-12 sm:mx-12  md:mx-14 mt-8 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-12 mx-6 sm:mx-6  md:mx-14 mt-8 md:grid-cols-2">
         {slicedServices.map((service, index) => (
           <div
             key={index}
