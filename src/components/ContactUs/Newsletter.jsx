@@ -41,9 +41,10 @@ const Newsletter = () => {
                 type="text"
                 name=""
                 placeholder="Your email address"
-                className="rounded-sm "
+                className="rounded-sm px-2 py-1
+                outline-none "
               />
-              <button className="p-1 text-sm rounded-sm bg-ash">
+              <button className="p-2 text-sm rounded-sm bg-ash">
                 SUBSCRIBE
               </button>
             </div>
